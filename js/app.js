@@ -14,7 +14,7 @@ form.addEventListener("submit", (e) => {
   let newBtnDelete = document.createElement("button");
   let hr = document.createElement("hr");
   let img = document.createElement("img");
-
+  new Audio("../music/deClick.mp3").play();
   newLiList.textContent = inputCreat.value;
   inputCreat.value = "";
 
@@ -42,13 +42,14 @@ form.addEventListener("submit", (e) => {
   cardListItemBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
       btn.parentElement.classList.toggle("card__text-decoration");
+      new Audio("../music/pen-click-sound.mp3").play();
     });
   });
   let cardBtnDelete = document.querySelectorAll(".card__list__item__delete");
   cardBtnDelete.forEach((btn) => {
     btn.addEventListener("click", () => {
       btn.parentElement.remove();
-
+      new Audio("../music/deClick.mp3").play();
       number = ulList.children.length;
       couterSpan.textContent = number;
     });
@@ -63,5 +64,6 @@ btnClearAll.addEventListener("click", () => {
     li.remove();
     number = ulList.children.length;
     couterSpan.textContent = number;
+    new Audio("../music/null-click.mp3").play();
   });
 });
